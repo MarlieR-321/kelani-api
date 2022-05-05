@@ -2,6 +2,8 @@ package uca.edu.ni.kelani.repositories;
 
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -10,7 +12,8 @@ import uca.edu.ni.kelani.modelos.Factura;
 @Repository
 public class FacturaDRepository implements FacturaIRepository{
 
-	JdbcTemplate template = new JdbcTemplate();
+	@Autowired
+	JdbcTemplate template;
 	
 	public FacturaDRepository() {
 		// TODO Auto-generated constructor stub
