@@ -4,30 +4,30 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uca.edu.ni.kelani.modelos.Factura;
-import uca.edu.ni.kelani.repositories.FacturaDRepository;
-import uca.edu.ni.kelani.repositories.FacturaIRepository;
+import uca.edu.ni.kelani.modelos.FacturaDet;
+import uca.edu.ni.kelani.repositories.FacturaDetDRepository;
+import uca.edu.ni.kelani.repositories.FacturaDetIRepository;
 
 @Service
-public class FacturaServices implements FacturaIRepository{
+public class FacturaDetServices implements FacturaDetIRepository{
 
 	@Autowired
-	FacturaDRepository frp;
+	FacturaDetDRepository frp;
 
 	@Override
-	public List<Map<String, Object>> ListarRegistro() {
+	public List<Map<String, Object>> ListarRegistro(int id) {
 		// TODO Auto-generated method stub
-		return frp.ListarRegistro();
+		return frp.ListarRegistro(id);
 	}
 
 	@Override
-	public int GuardarRegistro(Factura c) {
+	public int GuardarRegistro(FacturaDet c) {
 		// TODO Auto-generated method stub
 		return frp.GuardarRegistro(c);
 	}
 
 	@Override
-	public int EditarRegistro(Factura c) {
+	public int EditarRegistro(FacturaDet c) {
 		// TODO Auto-generated method stub
 		return frp.EditarRegistro(c);
 	}
