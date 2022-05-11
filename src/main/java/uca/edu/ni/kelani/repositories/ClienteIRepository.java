@@ -13,5 +13,5 @@ public List<Map<String, Object>> ListarRegistro();
 	
 	public int EditarRegistro(Cliente cl);
 	
-	public int EliminarRegistro(int id);
+	public int EliminarRegistro(Cliente cl);
 }

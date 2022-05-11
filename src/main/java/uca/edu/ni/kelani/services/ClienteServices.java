@@ -35,8 +35,8 @@ public class ClienteServices implements ClienteIRepository {
 	}
 
 	@Override
-	public int EliminarRegistro(int id) {
+	public int EliminarRegistro(Cliente cl) {
 		// TODO Auto-generated method stub
-		return cli.EliminarRegistro(id);
+		return cli.EliminarRegistro(cl);
 	}
 }
