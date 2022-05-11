@@ -43,11 +43,18 @@ public class ClienteController {
 		if(b==1) msg="Registro modificado satisfactoriamente";
 		return msg;
 	}
-/*
-	@RequestMapping(path="/eliminar/{id}")
-	public int EliminarRegistro(int id) {
-		// TODO Auto-generated method stub
-		return frp.EliminarRegistro(id);
+
+	/*
+	 * @RequestMapping(path="/eliminar/{id}") public String EliminarRegistro(int id)
+	 * { // TODO Auto-generated method stub return frp.EliminarRegistro(id); }
+	 */
+	
+	@PutMapping(path="/eliminar/{id}")
+	public String delete(@RequestBody Cliente cl,@PathVariable int id,Model model) {
+		String msg = "Error al eliminar el registro..";
+		int b = cliS.EliminarRegistro(cl);
+		if(b==1) msg="Registro eliminar satisfactoriamente";
+		return msg;
 	}
-*/
+
 }
