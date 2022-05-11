@@ -14,10 +14,10 @@ import uca.edu.ni.kelani.repositories.CategoriaIRepository;
 
 
 
-
+@Service
 public class CategoriaServices implements CategoriaIRepository {
 	
-	@Autowired
+	@Autowired(required=true)
 	CategoriaDRepository ct;
 
 	@Override

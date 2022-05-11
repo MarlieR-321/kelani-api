@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import uca.edu.ni.kelani.modelos.UnidadMedida;
 
 
-
+@Repository
 public class UnidadMedidadDRepository implements UnidadMedidaIRepository {
 	
 	@Autowired

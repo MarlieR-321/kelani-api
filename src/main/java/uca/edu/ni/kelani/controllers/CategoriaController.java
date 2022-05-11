@@ -25,7 +25,7 @@ import uca.edu.ni.kelani.services.CategoriaServices;
 public class CategoriaController {
 	
 
-	@Autowired
+	@Autowired(required=true)
 	CategoriaServices cat;
 	
 	@RequestMapping(path="/listar")
