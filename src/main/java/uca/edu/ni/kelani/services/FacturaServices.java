@@ -26,11 +26,7 @@ public class FacturaServices implements FacturaIRepository{
 		return frp.GuardarRegistro(c);
 	}
 
-	@Override
-	public int EditarRegistro(Factura c) {
-		// TODO Auto-generated method stub
-		return frp.EditarRegistro(c);
-	}
+
 
 	@Override
 	public int EliminarRegistro(int id) {

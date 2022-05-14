@@ -26,16 +26,19 @@ public class FacturaDetServices implements FacturaDetIRepository{
 		return frp.GuardarRegistro(c);
 	}
 
-	@Override
-	public int EditarRegistro(FacturaDet c) {
-		// TODO Auto-generated method stub
-		return frp.EditarRegistro(c);
-	}
 
 	@Override
 	public int EliminarRegistro(int id) {
 		// TODO Auto-generated method stub
 		return frp.EliminarRegistro(id);
 	}
+
+	@Override
+	public int EliminarRegistroByEnc(int id) {
+		// TODO Auto-generated method stub
+		return frp.EliminarRegistroByEnc(id);
+	}
+	
+	
 
 }

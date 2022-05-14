@@ -34,14 +34,6 @@ public class FacturaDRepository implements FacturaIRepository{
 	}
 
 	@Override
-	public int EditarRegistro(Factura c) {
-		int b=0;
-		b = template.update("UPDATE Factura set fecha=?,total=?,id_cliente=?,direccion=?,telefono=?,estado=? WHERE id_factura=?",
-				c.getFecha(),c.getTotal(),c.getId_cliente(),c.getDireccion(),c.getTelefono(),c.getEstado(),c.getId_factura());
-		return b;
-	}
-
-	@Override
 	public int EliminarRegistro(int id) {
 		int b=0;
 		b = template.update("DELETE FROM Factura WHERE id_factura=?",
