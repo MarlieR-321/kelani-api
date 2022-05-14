@@ -25,7 +25,7 @@ public class ClienteDRepository implements ClienteIRepository{
 	public int GuardarRegistro(Cliente cl) {
 		// TODO Auto-generated method stub
 		int b = 0;
-		b = operacion.update("INSERT INTO Cliente(cedula, direccion, telefono, nombre, apellido, email, estado) values(?,?,?,?,?,?,?)",
+		b = operacion.update("INSERT INTO Cliente(cedula, direccion, telefono, nombre, apellido, email, estado) values(?,?,?,?,?,?,?,?)",
 				new Object[] {cl.getCedula(), cl.getDireccion(), cl.getTelefono(), cl.getNombre(), cl.getApellido(), cl.getEmail(), cl.getEstado()});
 		return b;
 	}
