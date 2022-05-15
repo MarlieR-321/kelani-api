@@ -10,7 +10,5 @@ public interface FacturaIRepository {
 	
 	public int GuardarRegistro(Factura c);
 	
-	public int EditarRegistro(Factura c);
-	
 	public int EliminarRegistro(int id);
 }

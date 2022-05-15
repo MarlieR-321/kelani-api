@@ -10,7 +10,7 @@ public interface FacturaDetIRepository {
 	
 	public int GuardarRegistro(FacturaDet c);
 	
-	public int EditarRegistro(FacturaDet c);
-	
 	public int EliminarRegistro(int id);
+	
+	public int EliminarRegistroByEnc(int id);
 }

@@ -32,18 +32,19 @@ public class FacturaDetDRepository implements FacturaDetIRepository{
 		return b;
 	}
 
-	@Override
-	public int EditarRegistro(FacturaDet c) {
-		int b=0;
-		b = template.update("UPDATE FacturaDet set id_producto=?,cantidad=?,subtotal=?,id_factura=?,estado=? WHERE id_fac_detalle=?",
-				c.getId_producto(),c.getCantidad(),c.getSubtotal(),c.getId_factura(),c.getEstado(),c.getId_factura_det());
-		return b;
-	}
 
 	@Override
 	public int EliminarRegistro(int id) {
 		int b=0;
-		b = template.update("UPDATE FacturaDet set estado=3 WHERE id_fac_detalle=?",
+		b = template.update("DELETE FROM FacturaDet WHERE id_fac_detalle=?",
+				id);
+		return b;
+	}
+	
+	@Override
+	public int EliminarRegistroByEnc(int id) {
+		int b=0;
+		b = template.update("DELETE FROM FacturaDet WHERE id_factura=?",
 				id);
 		return b;
 	}
