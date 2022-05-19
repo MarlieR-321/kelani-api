@@ -2,6 +2,10 @@ package uca.edu.ni.kelani.modelos;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
+
+
+@Entity
 public class Factura {
 
 	private int id_factura;
