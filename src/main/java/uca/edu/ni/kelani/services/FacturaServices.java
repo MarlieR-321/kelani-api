@@ -1,37 +1,34 @@
 package uca.edu.ni.kelani.services;
 
 import java.util.List;
-import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uca.edu.ni.kelani.modelos.Factura;
-import uca.edu.ni.kelani.repositories.FacturaDRepository;
-import uca.edu.ni.kelani.repositories.FacturaIRepository;
+import uca.edu.ni.kelani.modelos.Vw_Factura;
+import uca.edu.ni.kelani.repositories.FacturaRepository;
+import uca.edu.ni.kelani.repositories.VwFacturaRepository;
 
 @Service
-public class FacturaServices implements FacturaIRepository{
+public class FacturaServices{
 
-	@Autowired
-	FacturaDRepository frp;
+	@Autowired(required=true)
+	FacturaRepository frp;
+	
+	@Autowired(required=true)
+	VwFacturaRepository vfrp;
 
-	@Override
-	public List<Map<String, Object>> ListarRegistro() {
-		// TODO Auto-generated method stub
-		return frp.ListarRegistro();
+	
+	public List<Vw_Factura> ListarRegistro() {
+		return vfrp.findAll();
 	}
 
-	@Override
-	public int GuardarRegistro(Factura c) {
-		// TODO Auto-generated method stub
-		return frp.GuardarRegistro(c);
+	public Factura GuardarRegistro(Factura c) {
+		return frp.save(c);
 	}
 
 
-
-	@Override
-	public int EliminarRegistro(int id) {
-		// TODO Auto-generated method stub
-		return frp.EliminarRegistro(id);
+	public void EliminarRegistro(int id) {
+		frp.deleteById(id);
 	}
 
 }
