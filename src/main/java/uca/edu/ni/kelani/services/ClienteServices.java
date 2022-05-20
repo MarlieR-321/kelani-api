@@ -1,42 +1,45 @@
 package uca.edu.ni.kelani.services;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import uca.edu.ni.kelani.modelos.Cliente;
+import uca.edu.ni.kelani.repositories.ClienteRepository;
 
-import uca.edu.ni.kelani.repositories.ClienteDRepository;
-import uca.edu.ni.kelani.repositories.ClienteIRepository;
 
 @Service
-public class ClienteServices implements ClienteIRepository {
-	@Autowired
-	ClienteDRepository cli;
+public class ClienteServices {
+	
+	@Autowired(required=true)
+	ClienteRepository cli;
 
-	@Override
-	public List<Map<String, Object>> ListarRegistro() {
+
+	public List<Cliente> ListarRegistro() {
 		// TODO Auto-generated method stub
-		return cli.ListarRegistro();
+		return cli.findAll();
 	}
 
-	@Override
-	public int GuardarRegistro(Cliente cl) {
+	public Cliente GuardarRegistro(Cliente cl) {
 		// TODO Auto-generated method stub
-		return cli.GuardarRegistro(cl);
+		return cli.save(cl);
 	}
 
-	@Override
-	public int EditarRegistro(Cliente cl) {
+
+	public Cliente EditarRegistro(Cliente cl) {
 		// TODO Auto-generated method stub
-		return cli.EditarRegistro(cl);
+		return cli.save(cl);
 	}
 
-	@Override
-	public int EliminarRegistro(Cliente cl) {
+
+	public void EliminarRegistro(int id) {
 		// TODO Auto-generated method stub
-		return cli.EliminarRegistro(cl);
+		cli.deleteById(id);
+	}
+	
+	public Cliente ClienteById(int id) {
+		// TODO Auto-generated method stub
+		return	cli.getById(id);
 	}
 }

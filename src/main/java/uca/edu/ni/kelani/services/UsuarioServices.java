@@ -1,41 +1,41 @@
 package uca.edu.ni.kelani.services;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import uca.edu.ni.kelani.modelos.Usuario;
-import uca.edu.ni.kelani.repositories.UsuarioDRepository;
-import uca.edu.ni.kelani.repositories.UsuarioIRepository;
+import uca.edu.ni.kelani.repositories.UsuarioRepository;
 
 @Service
-public class UsuarioServices implements UsuarioIRepository {
-	@Autowired
-	UsuarioDRepository use;
+public class UsuarioServices {
+	
+	@Autowired(required=true)
+	UsuarioRepository use;
 
-	@Override
-	public List<Map<String, Object>> ListarRegistro() {
+	
+	public List<Usuario> ListarRegistro() {
 		// TODO Auto-generated method stub
-		return use.ListarRegistro();
+		return use.findAll();
 	}
 
-	@Override
-	public int GuardarRegistro(Usuario us) {
+	public Usuario GuardarRegistro(Usuario us) {
 		// TODO Auto-generated method stub
-		return use.GuardarRegistro(us);
+		return use.save(us);
 	}
 
-	@Override
-	public int EditarRegistro(Usuario us) {
+
+	public Usuario EditarRegistro(Usuario us) {
 		// TODO Auto-generated method stub
-		return use.EditarRegistro(us);
+		return use.save(us);
 	}
 
-	@Override
-	public int EliminarRegistro(Usuario us) {
+
+	public void EliminarRegistro(int id) {
 		// TODO Auto-generated method stub
-		return use.EliminarRegistro(us);
+		use.deleteById(id);
 	}
+	
+	
 }
