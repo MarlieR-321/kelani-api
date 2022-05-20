@@ -14,11 +14,11 @@ import uca.edu.ni.kelani.services.Vw_ProductoServices;
 @RequestMapping(path = "/producto")
 public class VwProductoController {
 	
-	@Autowired
+	@Autowired(required = true)
 	Vw_ProductoServices proS;
 	
-	@GetMapping(path = "/listar")
-	public List<Vw_Producto> listar(){
+	@GetMapping(path = "/vwlistar")
+	public List<Vw_Producto> listarVw(){
 		return proS.ListarRegistro();
 	}
 
