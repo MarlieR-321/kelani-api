@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import uca.edu.ni.kelani.modelos.Cliente;
 import uca.edu.ni.kelani.modelos.Producto;
 import uca.edu.ni.kelani.services.ProductoServices;
 
@@ -41,5 +42,7 @@ public class ProductoController {
 	public void EliminarRegistro(@PathVariable int id) {
 		proS.EliminarRegistro(id);
 	}
+	
+
 	
 }

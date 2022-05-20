@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import uca.edu.ni.kelani.modelos.Categoria;
+import uca.edu.ni.kelani.modelos.Cliente;
 import uca.edu.ni.kelani.services.CategoriaServices;
 
 
@@ -46,8 +47,9 @@ public class CategoriaController {
 	@DeleteMapping(path="/delete/{id}")
 	public void EliminarRegistro(@PathVariable int id)  {
 		cat.EliminarRegistro(id);
-		
 	}
-
-}
-
+		@GetMapping(path="/categoriaById/{id}")
+		public Categoria listarById( @PathVariable int id) {
+			return cat.CategoriaById(id);
+		}
+	}

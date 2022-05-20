@@ -11,6 +11,7 @@ public class ProductoServices{
 
 	@Autowired(required = true)
 	ProductoRepository prp;
+	
 
 	public List<Producto> ListarRegistro() {
 		// TODO Auto-generated method stub

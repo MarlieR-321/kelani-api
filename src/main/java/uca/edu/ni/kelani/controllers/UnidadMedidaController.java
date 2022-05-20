@@ -43,9 +43,11 @@ public class UnidadMedidaController {
 	}
 
 	@DeleteMapping(path="/delete/{id}")
-	public ResponseEntity<Void> EliminarRegistro(@PathVariable int id) throws Exception  {
+	public void EliminarRegistro(@PathVariable int id)  {
 		um.EliminarRegistro(id);
-		return ResponseEntity.notFound().build();
 	}
-
-}
+		@GetMapping(path="/unidadMedidaById/{id}")
+		public UnidadMedida listarById( @PathVariable int id) {
+			return um.UnidadMedidaById(id);
+		}
+	}

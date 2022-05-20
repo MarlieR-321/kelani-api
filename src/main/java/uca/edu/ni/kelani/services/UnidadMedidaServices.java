@@ -6,10 +6,11 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import uca.edu.ni.kelani.modelos.Cliente;
 import uca.edu.ni.kelani.modelos.Factura;
 import uca.edu.ni.kelani.modelos.UnidadMedida;
 import uca.edu.ni.kelani.modelos.Vw_Factura;
-import uca.edu.ni.kelani.repositories.ClienteDRepository;
+
 import uca.edu.ni.kelani.repositories.UnidadMedidaRepository;
 
 @Service
@@ -32,5 +33,8 @@ public class UnidadMedidaServices  {
 	public void EliminarRegistro(int id) {
 		um.deleteById(id);
 	}
-
+	public UnidadMedida UnidadMedidaById(int id) {
+		// TODO Auto-generated method stub
+		return	um.getById(id);
+	}
 }

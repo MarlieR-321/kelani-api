@@ -21,7 +21,7 @@ public class Categoria {
 	
 	
 	public Categoria(int id_categoria, String nombre_categoria, String descripcion, int estado) {
-		super();
+	
 		this.id_categoria = id_categoria;
 		this.nombre_categoria = nombre_categoria;
 		this.descripcion = descripcion;
