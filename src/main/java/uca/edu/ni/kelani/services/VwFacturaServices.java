@@ -13,7 +13,6 @@ public class VwFacturaServices{
 	
 	@Autowired(required=true)
 	VwFacturaRepository vfrp;
-
 	
 	public List<Vw_Factura> ListarRegistro() {
 		return vfrp.findAll();

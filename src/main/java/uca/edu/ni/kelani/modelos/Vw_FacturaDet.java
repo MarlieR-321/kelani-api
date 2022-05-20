@@ -23,6 +23,9 @@ public class Vw_FacturaDet {
 	@Column(name = "id_factura")
 	private int id_factura;
 	
+	@Column(name = "producto")
+	private String producto;
+	
 	@Column(name = "precio")
 	private double precio;
 	
@@ -32,12 +35,13 @@ public class Vw_FacturaDet {
 	@Column(name = "subtotal")
 	private double subtotal;
 
-	public Vw_FacturaDet(int id_fac_detalle, int id_producto, int id_factura, double precio, int cantidad,
-			double subtotal) {
+	public Vw_FacturaDet(int id_fac_detalle, int id_producto, int id_factura, String producto, double precio,
+			int cantidad, double subtotal) {
 		super();
 		this.id_fac_detalle = id_fac_detalle;
 		this.id_producto = id_producto;
 		this.id_factura = id_factura;
+		this.producto = producto;
 		this.precio = precio;
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
@@ -46,6 +50,16 @@ public class Vw_FacturaDet {
 	public Vw_FacturaDet() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	public String getProducto() {
+		return producto;
+	}
+
+	public void setProducto(String producto) {
+		this.producto = producto;
 	}
 
 	public int getId_fac_detalle() {
