@@ -17,7 +17,7 @@ public class VwProductoController {
 	@Autowired(required = true)
 	Vw_ProductoServices proS;
 	
-	@GetMapping(path = "/vwlistar")
+	@GetMapping(path = "/listar")
 	public List<Vw_Producto> listarVw(){
 		return proS.ListarRegistro();
 	}

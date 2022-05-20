@@ -23,11 +23,6 @@ public class ProductoController {
 	@Autowired
 	ProductoServices proS;
 	
-	@GetMapping(path="/listar")
-	public List<Producto> listar() {
-		return proS.ListarRegistro();
-	}
-	
 	@PostMapping(path = "/add")
 	public Producto insert(@RequestBody Producto p) {
 		return proS.GuardarRegistro(p);

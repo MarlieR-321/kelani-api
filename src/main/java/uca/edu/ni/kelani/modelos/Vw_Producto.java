@@ -12,7 +12,7 @@ public class Vw_Producto {
 	@Id
 	private int id_producto;
 	
-	@Column(name = "nombre_producto")
+	@Column(name = "nombre")
 	private String nombre_producto;
 	@Column(name = "descripcion")
 	private String descripcion;
@@ -20,29 +20,34 @@ public class Vw_Producto {
 	private Double precio;
 	@Column(name = "costo")
 	private Double costo;
-	@Column(name = "id_categoria")
-	private int id_categoria;
-	@Column(name = "descripcion_categoria")
-	private String descripcion_categoria;
 	@Column(name = "id_unidad")
 	private int id_unidad;
-	@Column(name = "abreviacion")
+	@Column(name = "nombre_unidad")
+	private String nombre_unidad;
+	@Column(name = "abreviatura")
 	private String abreviacion;
 	
+	@Column(name = "id_categoria")
+	private int id_categoria;
+	@Column(name = "nombre_categoria")
+	private String descripcion_categoria;
 	
-	
+
+
+
 	public Vw_Producto(int id_producto, String nombre_producto, String descripcion, Double precio, Double costo,
-			int id_categoria, String descripcion_categoria, int id_unidad, String abreviacion) {
+			int id_unidad, String nombre_unidad, String abreviacion, int id_categoria, String descripcion_categoria) {
 		super();
 		this.id_producto = id_producto;
 		this.nombre_producto = nombre_producto;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.costo = costo;
+		this.id_unidad = id_unidad;
+		this.nombre_unidad = nombre_unidad;
+		this.abreviacion = abreviacion;
 		this.id_categoria = id_categoria;
 		this.descripcion_categoria = descripcion_categoria;
-		this.id_unidad = id_unidad;
-		this.abreviacion = abreviacion;
 	}
 
 
@@ -50,6 +55,18 @@ public class Vw_Producto {
 	public Vw_Producto() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public String getNombre_unidad() {
+		return nombre_unidad;
+	}
+
+
+
+	public void setNombre_unidad(String nombre_unidad) {
+		this.nombre_unidad = nombre_unidad;
 	}
 
 
