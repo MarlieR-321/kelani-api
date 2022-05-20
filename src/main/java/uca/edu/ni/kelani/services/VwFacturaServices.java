@@ -9,20 +9,14 @@ import uca.edu.ni.kelani.repositories.FacturaRepository;
 import uca.edu.ni.kelani.repositories.VwFacturaRepository;
 
 @Service
-public class FacturaServices{
-
+public class VwFacturaServices{
+	
 	@Autowired(required=true)
-	FacturaRepository frp;
+	VwFacturaRepository vfrp;
+
 	
-	
-
-	public Factura GuardarRegistro(Factura c) {
-		return frp.save(c);
-	}
-
-
-	public void EliminarRegistro(int id) {
-		frp.deleteById(id);
+	public List<Vw_Factura> ListarRegistro() {
+		return vfrp.findAll();
 	}
 
 }
