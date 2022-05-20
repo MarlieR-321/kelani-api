@@ -1,7 +1,20 @@
 package uca.edu.ni.kelani.modelos;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Entity
+@Table(name = "usuario")
 public class Usuario {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_usuario;
 	private String username;
 	private String pwd;
@@ -19,7 +32,8 @@ public class Usuario {
 		this.estado = estado;
 	}
 
-	public static void main(String[] args) {
+	public Usuario() {
+		super();
 		// TODO Auto-generated method stub
 	}
 
