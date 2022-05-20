@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import uca.edu.ni.kelani.modelos.Categoria;
 import uca.edu.ni.kelani.modelos.UnidadMedida;
 
 import uca.edu.ni.kelani.services.UnidadMedidaServices;
@@ -23,38 +27,25 @@ import uca.edu.ni.kelani.services.UnidadMedidaServices;
 @RequestMapping(path="/unidadMedida")
 
 public class UnidadMedidaController {
+	
 	@Autowired
 	UnidadMedidaServices um;
-	
-	@RequestMapping(path="/listar")
-	public List<Map<String, Object>> listar() {
-		// TODO Auto-generated method stub
-		return um.ListarRegistro();
-	}
-	
-	@PostMapping(path="/agregar")
-	public String insert(@RequestBody UnidadMedida umd) {
-		String msg = "Error al guardar el registro..";
-		int b = um.GuardarRegistro(umd);
-		if(b==1) msg="Registro guardado satisfactoriamente";
-		return msg;
+
+	@GetMapping("/listar")
+    public List<UnidadMedida> listar() {
+        return um.ListarRegistro();
+    }
+
+
+	@PostMapping(path="/add")
+	public ResponseEntity<UnidadMedida> insert(@RequestBody UnidadMedida u) {
+		return ResponseEntity.ok(um.GuardarRegistro(u));
 	}
 
-	@PutMapping(path="/editar/{id}")
-	public String edit(@RequestBody UnidadMedida umd,@PathVariable int id,Model model) {
-		String msg = "Error al editar el registro..";
-		int b = um.EditarRegistro(umd);
-		if(b==1) msg="Registro modificado satisfactoriamente";
-		return msg;
+	@DeleteMapping(path="/delete/{id}")
+	public ResponseEntity<Void> EliminarRegistro(@PathVariable int id) throws Exception  {
+		um.EliminarRegistro(id);
+		return ResponseEntity.notFound().build();
 	}
-/*
-	@RequestMapping(path="/eliminar/{id}")
-	public int EliminarRegistro(int id) {
-		// TODO Auto-generated method stub
-		return frp.EliminarRegistro(id);
-	}
-*/
+
 }
-
-
-

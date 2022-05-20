@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import uca.edu.ni.kelani.modelos.Categoria;
 import uca.edu.ni.kelani.services.CategoriaServices;
 
@@ -25,38 +29,25 @@ import uca.edu.ni.kelani.services.CategoriaServices;
 public class CategoriaController {
 	
 
-	@Autowired(required=true)
+	@Autowired
 	CategoriaServices cat;
-	
-	@RequestMapping(path="/listar")
-	public List<Map<String, Object>> listar() {
-		// TODO Auto-generated method stub
-		return cat.ListarRegistro();
-	}
-	
-	@PostMapping(path="/agregar")
-	public String insert(@RequestBody Categoria cate) {
-		String msg = "Error al guardar el registro..";
-		int b = cat.GuardarRegistro(cate);
-		if(b==1) msg="Registro guardado satisfactoriamente";
-		return msg;
+
+	@GetMapping("/listar")
+    public List<Categoria> listar() {
+        return cat.ListarRegistro();
+    }
+
+
+	@PostMapping(path="/add")
+	public Categoria insert(@RequestBody Categoria c) {
+		return cat.GuardarRegistro(c);
 	}
 
-	@PutMapping(path="/editar/{id}")
-	public String edit(@RequestBody Categoria cate,@PathVariable int id,Model model) {
-		String msg = "Error al editar el registro..";
-		int b = cat.EditarRegistro(cate);
-		if(b==1) msg="Registro modificado satisfactoriamente";
-		return msg;
+	@DeleteMapping(path="/delete/{id}")
+	public void EliminarRegistro(@PathVariable int id)  {
+		cat.EliminarRegistro(id);
+		
 	}
-/*
-	@RequestMapping(path="/eliminar/{id}")
-	public int EliminarRegistro(int id) {
-		// TODO Auto-generated method stub
-		return frp.EliminarRegistro(id);
-	}
-*/
+
 }
-
-
 

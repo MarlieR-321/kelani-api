@@ -9,40 +9,29 @@ import org.springframework.stereotype.Service;
 
 import uca.edu.ni.kelani.modelos.Categoria;
 
-import uca.edu.ni.kelani.repositories.CategoriaDRepository;
-import uca.edu.ni.kelani.repositories.CategoriaIRepository;
+import uca.edu.ni.kelani.repositories.CategoriaRepository;
+import uca.edu.ni.kelani.repositories.VwFacturaRepository;
 
 
 
 @Service
-public class CategoriaServices implements CategoriaIRepository {
+public class CategoriaServices {
 	
 	@Autowired(required=true)
-	CategoriaDRepository ct;
+	CategoriaRepository ct;
 
-	@Override
-	public List<Map<String, Object>> ListarRegistro() {
-		// TODO Auto-generated method stub
-		return ct.ListarRegistro();
+	
+	public List<Categoria> ListarRegistro() {
+		return ct.findAll();
 	}
 
-	@Override
-	public int GuardarRegistro(Categoria cat) {
-		// TODO Auto-generated method stub
-		return ct.GuardarRegistro(cat);
+	public Categoria GuardarRegistro(Categoria c) {
+		return ct.save(c);
 	}
 
-	@Override
-	public int EditarRegistro(Categoria cat) {
-		// TODO Auto-generated method stub
-		return ct.EditarRegistro(cat);
-	}
 
-	@Override
-	public int EliminarRegistro(int id) {
-		// TODO Auto-generated method stub
-		return ct.EliminarRegistro(id);
+	public void EliminarRegistro(int id) {
+		ct.deleteById(id);
 	}
-
 
 }

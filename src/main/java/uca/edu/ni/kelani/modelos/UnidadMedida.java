@@ -1,7 +1,20 @@
 package uca.edu.ni.kelani.modelos;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name = "UnidadMedida")
 public class UnidadMedida {
 
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_unidad;
 	private String nombre_unidad;
 	private String abreviatura;
@@ -15,10 +28,10 @@ public class UnidadMedida {
 		this.estado = estado;
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public UnidadMedida() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
 	public int getId_unidad() {
 		return id_unidad;
 	}
