@@ -6,24 +6,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 
 @Entity
-@Table(name = "UnidadMedida")
+@Table(name = "unidadmedida")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class UnidadMedida {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_unidad;
-	private String nombre_unidad;
+	private String nombre;
 	private String abreviatura;
 	private int estado;
 	
 	
-	public UnidadMedida(int id_unidad, String nombre_unidad, String abreviatura, int estado) {
+	public UnidadMedida(int id_unidad, String nombre, String abreviatura, int estado) {
 		this.id_unidad = id_unidad;
-		this.nombre_unidad = nombre_unidad;
+		this.nombre = nombre;
 		this.abreviatura = abreviatura;
 		this.estado = estado;
 	}
@@ -40,12 +43,12 @@ public class UnidadMedida {
 		this.id_unidad = id_unidad;
 	}
 
-	public String getNombre_unidad() {
-		return nombre_unidad;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setNombre_unidad(String nombre_unidad) {
-		this.nombre_unidad = nombre_unidad;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getAbreviatura() {

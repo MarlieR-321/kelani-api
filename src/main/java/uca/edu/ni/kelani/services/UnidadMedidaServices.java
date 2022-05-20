@@ -28,6 +28,7 @@ public class UnidadMedidaServices  {
 	public UnidadMedida GuardarRegistro(UnidadMedida c) {
 		return um.save(c);
 	}
+	
 
 
 	public void EliminarRegistro(int id) {

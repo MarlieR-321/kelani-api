@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import uca.edu.ni.kelani.modelos.Categoria;
+import uca.edu.ni.kelani.modelos.Cliente;
 import uca.edu.ni.kelani.modelos.UnidadMedida;
 
 import uca.edu.ni.kelani.services.UnidadMedidaServices;
@@ -28,7 +29,7 @@ import uca.edu.ni.kelani.services.UnidadMedidaServices;
 
 public class UnidadMedidaController {
 	
-	@Autowired
+	@Autowired(required = true)
 	UnidadMedidaServices um;
 
 	@GetMapping("/listar")
@@ -38,9 +39,10 @@ public class UnidadMedidaController {
 
 
 	@PostMapping(path="/add")
-	public ResponseEntity<UnidadMedida> insert(@RequestBody UnidadMedida u) {
-		return ResponseEntity.ok(um.GuardarRegistro(u));
+	public UnidadMedida insert(@RequestBody UnidadMedida u) {
+		return um.GuardarRegistro(u);
 	}
+
 
 	@DeleteMapping(path="/delete/{id}")
 	public void EliminarRegistro(@PathVariable int id)  {
