@@ -30,13 +30,15 @@ public class Vw_Producto {
 	@Column(name = "id_categoria")
 	private int id_categoria;
 	@Column(name = "nombre_categoria")
+	private String nombre_categoria;
+	@Column(name = "descripcion_categoria")
 	private String descripcion_categoria;
 	
 
 
 
 	public Vw_Producto(int id_producto, String nombre_producto, String descripcion, Double precio, Double costo,
-			int id_unidad, String nombre_unidad, String abreviacion, int id_categoria, String descripcion_categoria) {
+			int id_unidad, String nombre_unidad, String abreviacion, int id_categoria, String nombre_categoria,String descripcion_categoria) {
 		super();
 		this.id_producto = id_producto;
 		this.nombre_producto = nombre_producto;
@@ -47,6 +49,7 @@ public class Vw_Producto {
 		this.nombre_unidad = nombre_unidad;
 		this.abreviacion = abreviacion;
 		this.id_categoria = id_categoria;
+		this.nombre_categoria = nombre_categoria; 
 		this.descripcion_categoria = descripcion_categoria;
 	}
 
@@ -55,18 +58,6 @@ public class Vw_Producto {
 	public Vw_Producto() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-
-
-	public String getNombre_unidad() {
-		return nombre_unidad;
-	}
-
-
-
-	public void setNombre_unidad(String nombre_unidad) {
-		this.nombre_unidad = nombre_unidad;
 	}
 
 
@@ -131,6 +122,42 @@ public class Vw_Producto {
 
 
 
+	public int getId_unidad() {
+		return id_unidad;
+	}
+
+
+
+	public void setId_unidad(int id_unidad) {
+		this.id_unidad = id_unidad;
+	}
+
+
+
+	public String getNombre_unidad() {
+		return nombre_unidad;
+	}
+
+
+
+	public void setNombre_unidad(String nombre_unidad) {
+		this.nombre_unidad = nombre_unidad;
+	}
+
+
+
+	public String getAbreviacion() {
+		return abreviacion;
+	}
+
+
+
+	public void setAbreviacion(String abreviacion) {
+		this.abreviacion = abreviacion;
+	}
+
+
+
 	public int getId_categoria() {
 		return id_categoria;
 	}
@@ -139,6 +166,18 @@ public class Vw_Producto {
 
 	public void setId_categoria(int id_categoria) {
 		this.id_categoria = id_categoria;
+	}
+
+
+
+	public String getNombre_categoria() {
+		return nombre_categoria;
+	}
+
+
+
+	public void setNombre_categoria(String nombre_categoria) {
+		this.nombre_categoria = nombre_categoria;
 	}
 
 
@@ -155,27 +194,7 @@ public class Vw_Producto {
 
 
 
-	public int getId_unidad() {
-		return id_unidad;
-	}
-
-
-
-	public void setId_unidad(int id_unidad) {
-		this.id_unidad = id_unidad;
-	}
-
-
-
-	public String getAbreviacion() {
-		return abreviacion;
-	}
-
-
-
-	public void setAbreviacion(String abreviacion) {
-		this.abreviacion = abreviacion;
-	}
+	
 	
 	
 
