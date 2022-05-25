@@ -18,14 +18,12 @@ public class Producto {
 	private double precio;
 	private double costo;
 	private int id_categoria;
-	private String descripcion_categoria;
 	private int id_unidad;
-	private String abreviacion;
 	private int estado;
 	
 	
 	public Producto(int id_producto, String nombre_producto, String descripcion,Double precio,Double costo,
-			int id_categoria, String descripcion_categoria,int id_unidad, String abreviacion,int estado) {
+			int id_categoria,int id_unidad, int estado) {
 		super();
 		this.id_producto = id_producto;
 		this.nombre_producto = nombre_producto;
@@ -33,9 +31,7 @@ public class Producto {
 		this.precio = precio;
 		this.costo = costo;
 		this.id_categoria = id_categoria;
-		this.descripcion_categoria = descripcion_categoria;
 		this.id_unidad = id_unidad;
-		this.abreviacion = abreviacion;
 		this.estado = estado;
 	}
 
@@ -106,22 +102,6 @@ public class Producto {
 
 	public void setEstado(int estado) {
 		this.estado = estado;
-	}
-
-	public String getDescripcion_categoria() {
-		return descripcion_categoria;
-	}
-
-	public void setDescripcion_categoria(String descripcion_categoria) {
-		this.descripcion_categoria = descripcion_categoria;
-	}
-
-	public String getAbreviacion() {
-		return abreviacion;
-	}
-
-	public void setAbreviacion(String abreviacion) {
-		this.abreviacion = abreviacion;
 	}
 
 	

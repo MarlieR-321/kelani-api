@@ -32,7 +32,7 @@ public class UsuarioController {
 		return usuS.GuardarRegistro(us);
 	}
 
-	@PutMapping(path="/edit/{id}")
+	@PutMapping(path="/edit")
 	public Usuario edit(@RequestBody Usuario us) {
 		return usuS.EditarRegistro(us);
 	}

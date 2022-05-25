@@ -32,7 +32,7 @@ public class ClienteController {
 		return cliS.GuardarRegistro(cl);
 	}
 
-	@PutMapping(path="/edit/{id}")
+	@PutMapping(path="/edit")
 	public Cliente edit(@RequestBody Cliente cl) {
 		return cliS.EditarRegistro(cl);
 	}
