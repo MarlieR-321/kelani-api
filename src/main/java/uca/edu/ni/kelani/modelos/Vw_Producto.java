@@ -13,7 +13,7 @@ public class Vw_Producto {
 	private int id_producto;
 	
 	@Column(name = "nombre")
-	private String nombre_producto;
+	private String nombre;
 	@Column(name = "descripcion")
 	private String descripcion;
 	@Column(name = "precio")
@@ -26,7 +26,6 @@ public class Vw_Producto {
 	private String nombre_unidad;
 	@Column(name = "abreviatura")
 	private String abreviacion;
-	
 	@Column(name = "id_categoria")
 	private int id_categoria;
 	@Column(name = "nombre_categoria")
@@ -37,11 +36,11 @@ public class Vw_Producto {
 
 
 
-	public Vw_Producto(int id_producto, String nombre_producto, String descripcion, Double precio, Double costo,
-			int id_unidad, String nombre_unidad, String abreviacion, int id_categoria, String nombre_categoria,String descripcion_categoria) {
+	public Vw_Producto(int id_producto, String nombre, String descripcion, Double precio, Double costo,
+			int id_unidad, String nombre_unidad, String abreviacion, int id_categoria, String nombre_categoria, String descripcion_categoria) {
 		super();
 		this.id_producto = id_producto;
-		this.nombre_producto = nombre_producto;
+		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.costo = costo;
@@ -74,14 +73,14 @@ public class Vw_Producto {
 
 
 
-	public String getNombre_producto() {
-		return nombre_producto;
+	public String getNombre() {
+		return nombre;
 	}
 
 
 
-	public void setNombre_producto(String nombre_producto) {
-		this.nombre_producto = nombre_producto;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 
